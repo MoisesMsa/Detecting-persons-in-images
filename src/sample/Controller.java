@@ -5,10 +5,8 @@ import java.util.List;
 
 public class Controller {
 
-
-    public void openDataSet(){
-
-    }
+    //novo dataset
+    //nova img
 
     public void KNN(List dataset, String img){
 

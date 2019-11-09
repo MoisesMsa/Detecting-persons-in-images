@@ -8,22 +8,40 @@ public class Controller {
             this.img = new Image(path);
     }
 
-    public void KNN(List<float> dataset, List<float> img){
-        for (List<float> dataset : d) {
-            this.chebychevDistance(d, img);
-        }
+    public Boolean knn(List<String[]> dataset, List<Float> img){
 
-        //rank -> sort
-        //select
-        //get often target
-        //target
+        List<String> targerts = new ArrayList();
+
+        for (String[] d : dataset) {
+            Float distance = this.chebychevDist(d, img);
+            if(distance <= 1) targerts.add(d[1000]);
+
+        }
+        
+        return checkTarget(targerts);
     }
 
-    public float chebychevDistance(List<Float> img_d, List<Float> img){
+
+    public Boolean checkTarget( List<String> targerts){
+
+        int hasPerson = 0, noPerson = 0;
+
+        for (String t: targerts) {
+            if(t == "Person"){
+                hasPerson++;
+            }else if(t == "No Person"){
+                noPerson++;
+            }
+        }
+
+        return hasPerson > noPerson ?  True : False;
+    }
+
+    public Float chebychevDist(String[] img_d, List<Float> img){
         List<Float> diffContainer = new ArrayList<>();
 
         for (int i = 0; i < 1000; i++)
-            diffContainer.add(img_d.get(i) - img.get(i));
+            diffContainer.add(Float.parseFloat(img_d[i]) - img.get(i));
 
         return Collections.max(diffContainer);
     }

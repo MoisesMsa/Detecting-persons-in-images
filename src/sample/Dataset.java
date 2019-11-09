@@ -22,11 +22,16 @@ public class Dataset{
 
     public void readFile() throws IOException {
         String row;
-
+        int countLine = 0;
         BufferedReader csv = new BufferedReader(new FileReader(this.getPath()));
-        while ((row = csv.readLine()) != null) {
-            String[] r = row.split(",");
-            this.data.add(r);
+        while ((row = csv.readLine()) != null)
+        {
+            if(countLine > 0)
+            {
+                String[] r = row.split(",");
+                this.data.add(r);
+            }
+            countLine++;
         }
         csv.close();
     }

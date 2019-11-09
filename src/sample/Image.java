@@ -10,7 +10,7 @@ import org.opencv.imgcodecs.Imgcodecs;
 
 public class Image {
     private
-        List<Float> arrayOfFeatures;
+        List<Float> features;
         String name, path;
 
     public Image(String path){
@@ -23,7 +23,7 @@ public class Image {
         HOGDescriptor hog = new HOGDescriptor();
         hog.compute(img,features);
 
-        this.arrayOfFeatures = features.toList();
+        this.features = features.toList();
     }
 
     public String getName() {
@@ -34,7 +34,7 @@ public class Image {
         return path;
     }
 
-    public List<Float> getArrayOfFeatures() {
-        return arrayOfFeatures;
+    public List<Float> getFeatures() {
+        return features;
     }
 }

@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 public class Main extends Application {
 
     @Override
@@ -21,7 +23,11 @@ public class Main extends Application {
     public static void main(String[] args) {
         System.loadLibrary( Core.NATIVE_LIBRARY_NAME );
         //launch(args);
+
         Dataset dataset = new Dataset();
         Image img = new Image("/home/moita/IdeaProjects/lp2/dataset/PNG.png");
+
+
+
     }
 }

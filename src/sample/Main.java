@@ -26,8 +26,7 @@ public class Main extends Application {
 
         Dataset dataset = new Dataset();
         Image img = new Image("/home/moita/IdeaProjects/lp2/dataset/PNG.png");
-
-
+        Controller controller = new Controller();
 
     }
 }

@@ -4,10 +4,6 @@ import java.util.*;
 
 public class Controller {
 
-    public Controller(String path){
-            this.img = new Image(path);
-    }
-
     public Boolean knn(List<String[]> dataset, List<Float> img){
 
         List<String> targerts = new ArrayList();
@@ -15,9 +11,8 @@ public class Controller {
         for (String[] d : dataset) {
             Float distance = this.chebychevDist(d, img);
             if(distance <= 1) targerts.add(d[1000]);
-
         }
-        
+
         return checkTarget(targerts);
     }
 
@@ -34,7 +29,7 @@ public class Controller {
             }
         }
 
-        return hasPerson > noPerson ?  True : False;
+        return hasPerson > noPerson ?  true : false;
     }
 
     public Float chebychevDist(String[] img_d, List<Float> img){
@@ -46,7 +41,4 @@ public class Controller {
         return Collections.max(diffContainer);
     }
 
-    private
-        Dataset dataset = new Dataset();
-        Image img;
 }

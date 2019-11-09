@@ -8,9 +8,6 @@ import java.io.IOException;
 //import java.nio.file.Paths;
 
 public class Dataset{
-    private
-        final String path = "/home/moita/IdeaProjects/lp2/dataset/dataset.csv";
-        List<String[]> data = new <String[]> ArrayList();
 
     public Dataset(){
         try{
@@ -43,4 +40,8 @@ public class Dataset{
     public List<String[]> getData() {
         return data;
     }
+
+    private
+        final String path = "/home/moita/IdeaProjects/lp2/dataset/dataset.csv";
+        List<String[]> data = new <String[]> ArrayList();
 }

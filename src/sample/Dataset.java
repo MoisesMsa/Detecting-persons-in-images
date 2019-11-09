@@ -1,26 +1,32 @@
 package sample;
 
 import java.io.FileReader;
-import java.util.List;
+import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 //import java.nio.file.Files;
 //import java.nio.file.Paths;
 
-public class Dataset {
+public class Dataset{
     private
-        final String path = "teste";
-        List<String> data;
+        final String path = "/home/moita/IdeaProjects/lp2/dataset/dataset.csv";
+        List<String[]> data = new <String[]> ArrayList();
 
+    public Dataset(){
+        try{
+            this.readFile();
+        }catch(Exception e){
+            System.out.println("Error reading the file.");
+        }
+    }
 
     public void readFile() throws IOException {
-        int i = 0;
-        String row = null;
+        String row;
 
         BufferedReader csv = new BufferedReader(new FileReader(this.getPath()));
         while ((row = csv.readLine()) != null) {
             String[] r = row.split(",");
-            this.data.add(i++, r);
+            this.data.add(r);
         }
         csv.close();
     }
@@ -29,7 +35,7 @@ public class Dataset {
         return path;
     }
 
-    public List<String> getData() {
+    public List<String[]> getData() {
         return data;
     }
 }

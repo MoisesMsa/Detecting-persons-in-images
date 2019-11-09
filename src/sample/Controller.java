@@ -1,18 +1,19 @@
 package sample;
 
-import java.util.List;
-
-
 public class Controller {
 
-    //novo dataset
-    //nova img
-
-    public void KNN(List dataset, String img){
-
+    public Controller(String path){
+            this.img = new Image(path);
     }
 
+    public void KNN(){
+
+    }
     public void distance(){
 
     }
+
+    private
+        Dataset dataset = new Dataset();
+        Image img;
 }

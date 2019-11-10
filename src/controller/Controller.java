@@ -52,7 +52,7 @@ public class Controller {
         List<Float> diffContainer = new ArrayList<>();
 
         for (int i = 0; i < 1000; i++)
-            diffContainer.add(Float.parseFloat(img_d[i]) - img.get(i));
+            diffContainer.add(img.get(i) - Float.parseFloat(img_d[i]));
 
         return Collections.max(diffContainer);
     }

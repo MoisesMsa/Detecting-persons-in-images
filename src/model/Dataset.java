@@ -34,14 +34,14 @@ public class Dataset{
     }
 
     public String getPath() {
-        return path;
+        return this.path;
     }
 
     public List<String[]> getData() {
-        return data;
+        return this.data;
     }
 
     private
-        final String path = System.getProperty("user.dir")+"/dataset/dataset.csv";
+        final String path = System.getProperty("user.dir")+"/dataset/dataset_2019_1.csv";
         List<String[]> data = new <String[]> ArrayList();
 }

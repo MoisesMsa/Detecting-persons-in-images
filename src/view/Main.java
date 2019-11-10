@@ -55,7 +55,7 @@ public class Main extends Application {
 
             Controller controller = new Controller();
 
-            Boolean  hasPerson  = controller.knn(dataset.getData(), img.getFeatures(), 10);
+            Boolean  hasPerson  = controller.knn(dataset.getData(), img.getFeatures(), 25);
             hasperson.setText("Filename: "+ hasPerson);
 
         });

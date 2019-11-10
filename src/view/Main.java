@@ -26,7 +26,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
-
         stage.setTitle("Identify Person ");
 
         FileChooser fileChooser = new FileChooser();
@@ -36,7 +35,7 @@ public class Main extends Application {
         Label filename = new Label("Filename: ");
         Label hasperson = new Label("Has Person: ");
 
-        Image image = new Image(new FileInputStream("/home/moita/IdeaProjects/lp2/img/default.png"));
+        Image image = new Image(new FileInputStream(System.getProperty("user.dir")+"/img/default.png"));
         ImageView imageView = new ImageView(image);
         imageView.setFitHeight(355);
         imageView.setFitWidth(400);

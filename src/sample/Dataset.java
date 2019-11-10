@@ -4,12 +4,10 @@ import java.io.FileReader;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
-//import java.nio.file.Files;
-//import java.nio.file.Paths;
 
 public class Dataset{
 
-    public Dataset(){
+    public Dataset() {
         try{
             this.readFile();
         }catch(Exception e){
@@ -18,18 +16,20 @@ public class Dataset{
     }
 
     public void readFile() throws IOException {
+
         String row;
         int countLine = 0;
+
         BufferedReader csv = new BufferedReader(new FileReader(this.getPath()));
-        while ((row = csv.readLine()) != null)
-        {
-            if(countLine > 0)
-            {
+
+        while ((row = csv.readLine()) != null) {
+            if(countLine > 0) {
                 String[] r = row.split(",");
                 this.data.add(r);
             }
             countLine++;
         }
+
         csv.close();
     }
 

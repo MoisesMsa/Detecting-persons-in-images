@@ -8,17 +8,18 @@ import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.HOGDescriptor;
 import org.opencv.imgcodecs.Imgcodecs;
 
-public class Image {
+public class processImage {
     private
         List<Float> features;
         String name, path;
 
-    public Image(String path){
+    public processImage(String path) {
         this.path = path;
 
         Imgcodecs imageCodecs = new Imgcodecs();
-        Mat img = imageCodecs.imread(this.path);
+        Mat img = imageCodecs.imread(this.path, Imgcodecs.IMREAD_GRAYSCALE);
         Imgproc.resize(img, img, new Size(64,128), 0.5, 0.5, Imgproc.INTER_LINEAR);
+
         MatOfFloat features = new MatOfFloat();
         HOGDescriptor hog = new HOGDescriptor();
         hog.compute(img,features);
